@@ -8,11 +8,13 @@ historiales.use(function timeLog(req, res, next) {
 });
 
 historiales.get('/reflejos', async (req, res) => {
-
+    const rta = await historialReflejos(req.query);
+    res.json(rta);
 });
 
 historiales.get('/memoria', async (req, res) => {
-
+    const rta = await historialMemoria(req.query);
+    res.json(rta);
 });
 
 module.exports = {

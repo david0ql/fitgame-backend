@@ -7,7 +7,7 @@ login.use(function timeLog(req, res, next) {
     next();
 });
 
-login.get('/', async (req, res) => {
+login.post('/', async (req, res) => {
     const rta = await loginUser(req.body);
     res.json(rta);
 });

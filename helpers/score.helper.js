@@ -14,6 +14,22 @@ const scoreRegister = (params) => {
   });
 };
 
+
+const scoreRegister2 = (params) => {
+  const { correo, id_reflejo } = params;
+  return new Promise((resolve, reject) => {
+    connection.query(
+      "UPDATE memoria set correo = ? where id_memoria = ?",
+      [correo, id_reflejo],
+      function (error, results, fields) {
+        resolve(results);
+        reject(error);
+      }
+    );
+  });
+};
+
 module.exports = {
   scoreRegister,
+  scoreRegister2
 };

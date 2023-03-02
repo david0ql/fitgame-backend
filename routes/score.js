@@ -13,6 +13,7 @@ score.post("/score", async (req, res) => {
 });
 
 score.post("/score2", async (req, res) => {
+  console.log(req.body)
   const rta = await scoreRegister2(req.body);
   console.log(rta)
   res.json(rta);

@@ -7,8 +7,8 @@ register.use(function timeLog(req, res, next) {
     next();
 });
 
-register.get('/register', async (req, res) => {
-    const rta = await registerUser(req.query);
+register.post('/register', async (req, res) => {
+    const rta = await registerUser(req.body);
     res.json(rta);
 });
 

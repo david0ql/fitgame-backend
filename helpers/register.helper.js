@@ -6,7 +6,7 @@ const registerUser = (params) => {
       params;
     connection.query(
       "INSERT INTO login (usuario, clave, correo) VALUES (?, ?, ?)",
-      [usuario, correo, clave],
+      [usuario, clave, correo],
       function (error, results, fields) {
         resolve(results);
         reject(error);

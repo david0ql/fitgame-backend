@@ -7,6 +7,7 @@ const { records } = require("./routes/records");
 const { historiales } = require("./routes/historial");
 const { login } = require("./routes/login");
 const { score } = require("./routes/score");
+const { register } = require("./routes/register");
 
 app
   .use(cors())
@@ -17,5 +18,6 @@ app
   .use("/records", records)
   .use("/historial", historiales)
   .use("/login", login)
+  .use('/register', register)
   .use("/setscore", score)
   .listen(1111);
